@@ -21,7 +21,7 @@
 
 ### 实验细节 #TODO
 **Anchor策略**
-![Anchor_strategy](./img/YOLO_v2/anchor_strategy.PNG)
+![Anchor_strategy](../img/YOLO_v2/anchor_strategy.PNG)
 &emsp;$\begin{cases}
 {x=({t_x*w_a})-x_a}\\
 {y=({t_y*h_a})-y_a}
@@ -61,8 +61,8 @@
 &emsp;**${w, h}$是预测框的实际宽高**
 
 **Clustering策略**
-![Anchor_strategy](./img/YOLO_v2/clustering_strategy.PNG)
+![Anchor_strategy](../img/YOLO_v2/clustering_strategy.PNG)
 ### 性能指标
-![voc2007](./img/YOLO_v2/voc2007.PNG)
+![voc2007](../img/YOLO_v2/voc2007.PNG)
 
 ### 疑问

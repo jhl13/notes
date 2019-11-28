@@ -4,10 +4,10 @@
 ### 网络结构
 
 **流程图**
-![yolo_detection_system](./img/YOLO_v1/yolo_detection_system.PNG)  
+![yolo_detection_system](../img/YOLO_v1/yolo_detection_system.PNG)  
 
 **网络结构图**
-![yolo_network](./img/YOLO_v1/yolo_v1_network.PNG)
+![yolo_network](../img/YOLO_v1/yolo_v1_network.PNG)
 
 ### 模型优点
 1. 模型是一个整体的结构，不再像R-CNN系列那样需要RPN网络，而是直接预测x, y, w, h, p(x, y是相对与网格左上角坐标的偏移量, w, h是相对于全图的大小)
@@ -22,16 +22,18 @@
 3. 损失函数的构建上存在问题，比如对较大检测框的误差和较小检测框的误差相同对待（假设在H上的误差都是${\triangle}$，显然在小检测框上的惩罚应该更大）
 
 ### 损失函数
-![loss function](./img/YOLO_v1/loss_function.PNG)  
+![loss function](../img/YOLO_v1/loss_function.PNG)  
 coordinate loss只计算那些存在物体且IOU最高的检测框，且${\lambda_{coord}}$=5  
 object loss分别计算那些存在物体且IOU最高的检测框以及不存在物体的检测框，且${\lambda_{noobj}}$=0.5  
 class loss只计算那些存在物体且IOU最高的检测框
+与GT的IOU最大的预测框为"resposible"的预测框
 
 ### 实验细节 #TODO
+1. 预测的时候会预测7*7*2=98个预测框
 
 ### 性能指标
 **Real-Time Systems on PASCAL VOC 2007**
-![time comparison](./img/YOLO_v1/time_comparison.PNG)
+![time comparison](../img/YOLO_v1/time_comparison.PNG)
 
 ### 疑问
 为什么是物体中心所在的grid负责去检测该物体，物体中心所在的grid附近的gird感觉也可以做到该物体的检测
