@@ -19,9 +19,11 @@ $$d_-=\frac{e^{\|Net(x)-Net(x^-)\|_2}}{e^{\|Net(x)-Net(x^+)\|_2}+e^{\|Net(x)-Net
 $$Loss(d_+,d_-)\rightarrow0 \quad iff \frac{\|Net(x)-Net(x^+)\|}{\|Net(x)-Net(x^-)\|}\rightarrow0 $$  
 与正样本的距离尽可能小，与负样本距离尽可能大  
 ### 实验细节
+**采样策略**  
+![triple_mining](../img/Triplet_Network/triple_mining.PNG)  
 
 ### 性能指标
-![network](../img/Triplet_Network/result.PNG)  
+![result](../img/Triplet_Network/result.PNG)  
 TripletNet和SiameseNet都是论文作者的结果，但是很奇怪的是他说SiameseNet有几个结果做不出来
 ### 疑问
 
