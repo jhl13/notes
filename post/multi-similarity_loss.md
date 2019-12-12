@@ -10,6 +10,7 @@
 ![GPW(2)](../img/MS_loss/GPW(2).PNG)  
 ![GPW(3)](../img/MS_loss/GPW(3).PNG)  
 (2)由(1)对$\theta$求积分得到  
+**(2)其实是对$\theta$作积分，也就是$L(S,y)=F$**
 GPW表明，度量学习的损失函数可以转化为一个权重结构公式，分别对postive pair和nagative pair的$S_{ij}$求导并求绝对值可以得到相应的正负权重
 
 ### Pair-based Loss Function  
@@ -45,7 +46,7 @@ nagative pair的相似度要往小于$\lambda$的方向优化，postive pair的�
 ![multi-similarities](../img/MS_loss/multi-similarities.PNG)  
 对于一个nagative pair，Self-similarity越小越好，Negative relative similarity越大越好，Positive relative similarity越小越好  
 对于一个positive pair，Self-similarity越大越好，Negative relative similarity越大越好，Positive relative similarity越小越好  
-表格是指下面三种相似性在给一个nagative pair分配权重时是否起到了作用，**感觉表格中MS的P不应该打勾**  
+表格是指下面三种相似性在给一个nagative pair分配权重时是否起到了作用，**感觉表格中MS的P不应该打勾**因为相对于单个权重（正或负来说），只用到了两个，但其实他可以用三个similarities？  
 &nbsp;  
 对于一个nagative pair
 **Self-similarity**  
@@ -56,3 +57,18 @@ nagative pair的相似度要往小于$\lambda$的方向优化，postive pair的�
 &nbsp;  
 **Positive relative similarity**  
 对应于case3，随着positive pair的靠近，positive pair的Self-similarity增加，Positive relative similarity减小
+&nbsp;  
+**MS loss**
+![MS_-_weight](../img/MS_loss/MS_-_weight.PNG)  
+![MS_+_weight](../img/MS_loss/MS_+_weight.PNG)  
+![MS_loss](../img/MS_loss/MS_loss.PNG)  
+结合了binomial deviance loss 和 lifted structure loss，使得loss的权重与三种相似度都有关系。  
+&nbsp;  
+**一些理解**  
+本文提出的三种相似度，其实是用来作hard sample mining的。  
+权重越大，表示这越可能是一个难分样本  
+&nbsp;  
+对于negative pair，当其他的negative pairs越靠近anchor，$S_{ik}$越大，$w_{ij}^-$越小，说明相对而言这个pair中的负样本相比于其他negative pairs的负样本离anchor更远，更容易分
+
+&nbsp;  
+对于positive pair，当其他的positive pairs越靠近anchor，$S_{ik}$越大，$w_{ij}^-$越大，说明，当前pair的正样本离anchor相比于其他的positive pairs的正样本离anchor更远，更有可能是难分样本
