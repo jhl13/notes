@@ -38,7 +38,7 @@ class loss只计算那些存在物体且IOU最高的检测框
 ### 疑问
 1. 为什么是物体中心所在的grid负责去检测该物体，物体中心所在的grid附近的gird感觉也可以做到该物体的检测？  
    因为GT是中心对称的，它的中心只能在相应的grid内。其他的grid是不可能完全拟合GT的。  
-2. 究竟是哪个anchor box复杂GT的预测？    
-   GT中心所在的grid cell的anchor boxes复杂预测该GT，具体是哪个anchor box去负责GT的预测，则需要比对他们的IOU，IOU最大的则负责预测该GT，其他的anchor boxes不与该GT匹配。  
+2. 究竟是哪个anchor box负责GT的预测？    
+   GT中心所在的grid cell的anchor boxes负责预测该GT，具体是哪个anchor box去负责GT的预测，则需要比对他们的IOU，IOU最大的则负责预测该GT，其他的anchor boxes不与该GT匹配。  
 3. 怎么将anchor和ground truth相匹配上
    

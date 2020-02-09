@@ -48,30 +48,16 @@ nagative pair的相似度要往小于$\lambda$的方向优化，postive pair的�
 &nbsp;  
 相对于positive pair来说，固定anchor。对于case-2若其他的负样本离anchor越近，相对而言当前pair更容易误分，更有可能是难分样本。对于case-3，当其他的正样本离anchor越近，相对而言当前pair的正样本离当前anchor更远，更容易是难分样本。  
 &nbsp;  
-表格是指下面三种相似性在给一个nagative pair分配权重时是否起到了作用，**感觉表格中MS的P不应该打勾**因为相对于单个权重（正或负来说），只用到了两个，但其实他可以用三个similarities？  
-&nbsp;  
-对于一个nagative pair
-**Self-similarity**  
-对应于case1，nagative pair靠的越近，Self-similarity越大
-&nbsp;  
-**Negative relative similarity**  
-对应于case2，随着nagative pair的靠近，nagative pair的Self-similarity增加，Negative relative similarity减小，对应$e^{S_{ij}-S_{ik}}$
-&nbsp;  
-**Positive relative similarity**  
-对应于case3，随着positive pair的靠近，positive pair的Self-similarity增加，Positive relative similarity减小
-&nbsp;  
-**MS loss**
+ 
+**MS loss**  
+**负样本**  
+负样本的对的采样用到了positive similarity，权重用到了self similarity和negative similarity，当其他负样本越靠近当前样本对，negative similarity越小（这时候当前样本对的权重越小），当其他正样本越靠近当前样本对，positive similarity越小。  
+![MS_-_weight](../img/MS_loss/negative_pair_mining.PNG)  
 ![MS_-_weight](../img/MS_loss/MS_-_weight.PNG)  
+**正样本**  
+负样本的对的采样用到了negative similarity，权重用到了self similarity和positive similarity，当其他负样本越靠近当前样本对，negative similarity越小，当其他正样本越靠近当前样本对，positive similarity越小（这时候当前样本对的权重越大）。  
+![MS_-_weight](../img/MS_loss/positive_pair_mining.PNG)  
 ![MS_+_weight](../img/MS_loss/MS_+_weight.PNG)  
 ![MS_loss](../img/MS_loss/MS_loss.PNG)  
 结合了binomial deviance loss 和 lifted structure loss，使得loss的权重与三种相似度都有关系。  
 &nbsp;  
-**一些理解**  
-本文提出的三种相似度，其实是用来作hard sample mining的。  
-权重越大，表示这越可能是一个难分样本  
-&nbsp;  
-对于negative pair，权重只取决于negative pair本身的相似度以及其他negative pairs的相似度，当其他的negative pairs越靠近anchor，$S_{ik}$越大，$w_{ij}^-$越小，说明相对而言这个pair是一个易分样本对。固定anchor，其他负样本离anchor越近，相对而言当前pair的负样本更远，更易分。
-&nbsp;  
-对于positive pair，当其他的positive pairs越靠近anchor，$S_{ik}$越大，$w_{ij}^+$越大，说明相对而言是一个难分样本对，当前pair的正样本离anchor相比于其他的positive pairs的正样本离anchor更远，更有可能是难分样本。  
-&nbsp;  
-感觉上这篇文章在$w_{ij}^-$上只用到了S、N，在$w_{ij}^+$上只用到了S、P
