@@ -6,7 +6,7 @@
 度量学习其实是分类算法的一个分支，但度量学习可以学习到两个图片之间的相似度，但不能显式地判断属于哪一类别。而识别网络是用于将输入规划到具体的类别当中，但是识别网络的一个问题是，必须提前设定好分类的类别。
 
 ### 网络结构
-![network](../img/Triplet_Network/network.PNG)  
+![network](../../img/Triplet_Network/network.PNG)  
 **为什么要三个网络共享网络，为什么不能使用$3\times N$的一个batch？**
 ### 模型优点
 
@@ -20,10 +20,10 @@ $$Loss(d_+,d_-)\rightarrow0 \quad iff \frac{\|Net(x)-Net(x^+)\|}{\|Net(x)-Net(x^
 与正样本的距离尽可能小，与负样本距离尽可能大  
 ### 实验细节
 **采样策略**  
-![triple_mining](../img/Triplet_Network/triple_mining.PNG)  
+![triple_mining](../../img/Triplet_Network/triple_mining.PNG)  
 
 ### 性能指标
-![result](../img/Triplet_Network/result.PNG)  
+![result](../../img/Triplet_Network/result.PNG)  
 TripletNet和SiameseNet都是论文作者的结果，但是很奇怪的是他说SiameseNet有几个结果做不出来
 ### 疑问
 
