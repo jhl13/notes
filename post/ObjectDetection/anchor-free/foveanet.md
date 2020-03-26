@@ -25,3 +25,5 @@ FoveaBox并不算是最好的anchor-free的方法，但个人觉得有三个比�
 
 anchor密集程度和点预测的优劣性  
 ![retinanet的anchor数目](../../../img/foveanet/retinanet的anchor数目.png)  
+
+anchor-free感觉大部分论文就是loss和gt制作方面有所不同
