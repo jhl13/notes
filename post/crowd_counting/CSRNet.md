@@ -1,5 +1,4 @@
-## CSRNet: Dilated Convolutional Neural Networks for Understanding the Highly
-Congested Scenes
+## CSRNet: Dilated Convolutional Neural Networks for Understanding the Highly Congested Scenes
 阅读笔记 by **luo13**  
 2020-4-23  
 
