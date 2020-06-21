@@ -21,3 +21,9 @@ https://github.com/ruinmessi/ASFF
 从作者的消融实验来看，sun和concate也是会有效果的，但是会存在上述提到的特征冲突问题。  
 
 作者的baseline使用了不少tricks做了一个加强版的YOLOv3，可以参考一下开源的代码
+
+作者在论文中的速度对比图不是一个公平的对比，因为在YOLOv3中，使用的设备是TITAN X，而ASFF是V100  
+作者在github上补充了速度说明  
+![ASFF](../../../img/ASFF/速度.PNG) 
+
+github上也有人发现了，用了这个模块，参数量增加了很多，但是最后效果却没有太大提升甚至更差。  
