@@ -25,4 +25,8 @@
 ![loss](../../../img/centernet-triplet/loss.png)  
 loss与cornernet基本一致。  
 
+![消融实验](../../../img/centernet-triplet/消融实验.png)  
+
 小结：多复现别人的论文，注重细节，如果自己找不到好的创新点，就先看看别的论文的不足，我感觉这篇论文也就是这样来的。
+
+与Objects as Points的差别在于，Objects as Points主要依靠中心点，且已经在label assign上与cornernet上有所不同了，但是本文基本是基于cornernet的，center的预测可以当成是一个辅助的分支。

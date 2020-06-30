@@ -28,7 +28,7 @@ centripetal shift的计算，加上了log是为了限制输出的大小
 实验过程中作者发现了经过corner pooling之后特征图上会出现一个类似十字星的形状，为了更好得利用这一信息，作者提出了cross-star的注意力机制，个人理解就是实验corner pooling之后的特征图，加上辅助loss，学习目标是上面偏差图的（b）的情况，也就是说让左上角特征图去学习右下部分的内容，让右下角特征图去学习左上部分的内容。  
 
 ![guiding_shift](../../../img/centripetalNet/guiding_shift.png)   
-学习只在角点部分进行  
+学习只在角点部分进行，现在guiding shift加入辅助loss，学习向心偏移，再通过1*1卷积生成偏移热图。  
 
 小结：  
 1、anchor-free现在还是比较多地在特征值点选择和聚合方面进行优化，基本是换一种特征点选择方法或聚合方法就是一篇新论文。  
