@@ -1,5 +1,4 @@
-## Generalized Intersection over Union: A Metric and A Loss for Bounding Box
-Regression
+## Generalized Intersection over Union: A Metric and A Loss for Bounding Box Regression
 阅读笔记 by **luo13**  
 2020-3-3  
 
