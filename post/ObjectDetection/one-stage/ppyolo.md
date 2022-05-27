@@ -13,7 +13,7 @@
 2、EMA  
 3、DropBlock  
 4、IoU Loss  
-5、IoU Aware  
+5、IoU Aware（需要动态label assignment）  
 6、Grid Sensitive  
 7、Matri NMS  
 8、CoordConv  

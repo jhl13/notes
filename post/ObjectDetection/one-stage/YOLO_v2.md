@@ -21,7 +21,7 @@
 
 ### 实验细节 #TODO
 **Anchor策略**  
-![Anchor_strategy](../img/YOLO_v2/anchor_strategy.PNG)
+![Anchor_strategy](../../../img/YOLO_v2/anchor_strategy.PNG)
 &emsp;$\begin{cases}
 {x=({t_x*w_a})-x_a}\\
 {y=({t_y*h_a})-y_a}
@@ -61,11 +61,11 @@
 {t_w=log(w/p_w)}\\
 {t_h=log(h/p_h)}
 \end{cases}$  
-&emsp;**${w, h}$是预测框的实际宽高**  
+&emsp;**${w, h}$是预测框的实际宽高**,$p_w,p_h$是anchor的大小，即预测的是长宽相对于anchor的放缩因子  
 
 **Clustering策略**  
-![Anchor_strategy](../img/YOLO_v2/clustering_strategy.PNG)
+![Anchor_strategy](../../../img/YOLO_v2/clustering_strategy.PNG)
 ### 性能指标  
-![voc2007](../img/YOLO_v2/voc2007.PNG)
+![voc2007](../../../img/YOLO_v2/voc2007.PNG)
 
 ### 疑问
